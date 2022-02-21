@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "uhquopzvbrlfkilwko2f",
+    "password": "5JtY1lUCsM0wkrxctALJ",
+    "database": "bpcieaj1lwlic1qhrpvv",
+    "host": "bpcieaj1lwlic1qhrpvv-postgresql.services.clever-cloud.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
