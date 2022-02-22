@@ -20,11 +20,7 @@ const createAdmin = async (req,res) =>{
     }catch(e){
         return res.status(e.status || 400).send("Message"+e.message);
     }
-
-
 }
-
-
 
 module.exports = {
 

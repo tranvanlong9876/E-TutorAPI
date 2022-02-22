@@ -11,18 +11,19 @@ app.use(bodyParser.json())
 const adminRouter = require("./router/admin.router.js")
 const newsRouter = require("./router/news.router.js")
 const reportRouter = require("./router/report.router.js")
-
+const requrestRouter = require("./router/request.router.js");
+const courseRouter = require("./router/course.router.js");
 
 app.use("/admin",adminRouter);
 app.use("/news",newsRouter);
 app.use("/report",reportRouter);
+app.use("/request",requrestRouter);
+app.use("/course",courseRouter);
 
 app.get('/',(req,res)=>{
     console.log('app listen port 4001')
     res.send("Hello world!");
 })
-
-
 
 
 
