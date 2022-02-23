@@ -1,4 +1,5 @@
 'use strict';
+const Sequelize = require('sequelize');
 const {
   Model
 } = require('sequelize');
@@ -22,10 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     content: DataTypes.STRING,
     author: DataTypes.STRING,
-    timeCreate: {
-      type: DataTypes.STRING,
-      createdAt: true
-    }
   }, {
     sequelize,
     modelName: 'Report',

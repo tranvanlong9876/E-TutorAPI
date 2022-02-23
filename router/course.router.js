@@ -4,11 +4,11 @@ const courseController = require("../controller/courseController");
 
 
 
-router.post('/createCourse',courseController.createCourse());
+router.post('/createCourse',courseController.addCourse);
 
-router.get('/getAllCourse',courseController.getALlCourse());
+router.get('/getAllCourse',courseController.getALlCourse);
 
-router.get('/getCourse/:id',courseController.getCourseWithId());
+router.get('/getCourse/:id',courseController.getCourseWithId);
 
 
 

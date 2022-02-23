@@ -4,9 +4,9 @@ const requrestController = require("../controller/requrestController");
 
 
 
-router.post('/createRequest',requrestController.addRequest());
+router.post('/createRequest',requrestController.addRequest);
 
-router.get('/getRequest/:id',requrestController.getRequrestById());
+router.get('/getRequest/:id',requrestController.getRequrestById);
 
 
 

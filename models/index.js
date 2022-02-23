@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
-sequelize = new Sequelize('postgresql://uhquopzvbrlfkilwko2f:5JtY1lUCsM0wkrxctALJ@bpcieaj1lwlic1qhrpvv-postgresql.services.clever-cloud.com:5432/bpcieaj1lwlic1qhrpvv');
+sequelize = new Sequelize('mysql://usltzrspxt3n8eck:ucUaCm4HuzzpgtI1kx6A@baxtsuhfkagoyb0gq9wb-mysql.services.clever-cloud.com:3306/baxtsuhfkagoyb0gq9wb');
 
 fs
   .readdirSync(__dirname)

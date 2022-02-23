@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Course.init({
+    id:{
+      type:DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
+    },
     author: DataTypes.STRING,
     name: DataTypes.STRING,
     description: DataTypes.STRING,

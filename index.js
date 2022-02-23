@@ -21,12 +21,13 @@ app.use("/request",requrestRouter);
 app.use("/course",courseRouter);
 
 app.get('/',(req,res)=>{
-    console.log('app listen port 4001')
     res.send("Hello world!");
 })
 
 
 
 
-app.listen(4001);
+app.listen(4001,()=>{
+    console.log('app listen port 4001')
+});
 
