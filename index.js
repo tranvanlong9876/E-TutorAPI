@@ -27,7 +27,7 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(4001,()=>{
+app.listen(process.env.port || 4001,()=>{
     console.log('app listen port 4001')
 });
 
