@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 
 // parse application/json
 const bodyParser = require('body-parser');
@@ -13,6 +16,8 @@ const newsRouter = require("./router/news.router.js")
 const reportRouter = require("./router/report.router.js")
 const requrestRouter = require("./router/request.router.js");
 const courseRouter = require("./router/course.router.js");
+
+
 
 app.use("/admin",adminRouter);
 app.use("/news",newsRouter);
