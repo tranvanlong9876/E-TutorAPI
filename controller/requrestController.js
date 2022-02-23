@@ -21,7 +21,7 @@ const getRequrestById = async (req,res) =>{
     try{
         const id = req.params.id;
         const request = await Request.findAll({author:id});
-        return res.status(200).send({data: request})
+        return res.status(200).send( request)
     }catch(err){
         return res.status(400).send({mesage: err.message});
     }
