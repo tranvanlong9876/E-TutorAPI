@@ -1,4 +1,4 @@
-const { where } = require('sequelize/types');
+
 const db = require('../models')
 const Request = db.request;
 
