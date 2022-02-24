@@ -33,6 +33,6 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(process.env.port,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("app listten port: " + process.env.port);
 });
