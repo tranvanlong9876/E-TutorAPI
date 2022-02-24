@@ -24,9 +24,7 @@ const getALlCourse = async (req,res) =>{
 
     try{
         const course  = await Course.findAll();
-        return res.status(200).send( {
-            success:"true",
-            data:course});
+        return res.status(200).send(course);
     }catch(err){
         return res.status(400).send({mesage: err.message});
     }
@@ -41,9 +39,7 @@ const getCourseWithId = async (req,res) =>{
                 author:id
             }}
         );
-        return res.status(200).send( {
-            success:"true",
-            data:course});
+        return res.status(200).send(course);
     }catch(err){
         return res.status(400).send({mesage: err.message});
     }
