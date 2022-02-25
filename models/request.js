@@ -21,10 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       type:String,
       default:"processing"
     },
-    timeCreate: {
-      type: DataTypes.STRING,
-      createdAt: true
-    }
   }, {
     sequelize,
     modelName: 'Request',
