@@ -8,9 +8,9 @@ router.post('/createRequest',requrestController.addRequest);
 
 router.get('/getRequest/:id',requrestController.getRequrestById);
 
-router.post('/appeptRequest/:id',requrestController.appeptRequest);
+router.post('/acceptRequest/:id',requrestController.acceptRequest);
 
-router.post('cancelRequest/:id',requrestController.cancelRequest);
+router.post('/cancelRequest/:id',requrestController.cancelRequest);
 
 
 module.exports = router;

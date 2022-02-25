@@ -60,7 +60,7 @@ const cancelRequest = async (req,res) =>{
 
 }
 
-const appeptRequest = async (req,res) =>{
+const acceptRequest = async (req,res) =>{
 
     try{
         const id = req.params.id;
@@ -81,5 +81,5 @@ module.exports = {
     addRequest,
     getRequrestById,
     cancelRequest,
-    appeptRequest
+    acceptRequest
 }
