@@ -64,7 +64,7 @@ const acceptRequest = async (req,res) =>{
 
     try{
         const id = req.params.id;
-        const request = await Request.findById(id);
+        const request = await Request.findByPk(id);
         const reponse = request.udpate({
             status:"true"
         })
