@@ -17,6 +17,11 @@ module.exports = {
       course: {
         type: Sequelize.INTEGER
       },
+      status:{
+        type:Sequelize.STRING,
+        allowNull:false,
+        default:"processing"
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
