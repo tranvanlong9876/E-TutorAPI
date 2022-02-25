@@ -20,7 +20,7 @@ const addRequest = async (req,res) =>{
 const getRequrestById = async (req,res) =>{
     
     try{
-        const id = req.params.author;
+        const id = req.params.id;
         const request = await Request.findAll(
                 {
                     where: {
