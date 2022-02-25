@@ -65,10 +65,12 @@ const acceptRequest = async (req,res) =>{
     try{
         const id = req.params.id;
         const request = await Request.findByPk(id);
-        const reponse = request.udpate({
-            status:"true"
-        })
-        return res.status(200).send({success:"true", message:reponse});
+        request.update({status:"true"}).then((result) =>{
+            res.status(200).send({success:true,mesage:result})
+        }).catch(err =>{
+            return res.status(400).send({message:err.message});
+        });
+        
     }catch(err){
         return res.status(400).send({success:"false", message:err.message});
     }
