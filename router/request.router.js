@@ -10,7 +10,7 @@ router.get('/getRequest/:id',requrestController.getRequrestById);
 
 router.post('/appeptRequest/:id',requrestController.appeptRequest);
 
-router.post('cancelRequest/:author',requrestController.cancelRequest);
+router.post('cancelRequest/:id',requrestController.cancelRequest);
 
 
 module.exports = router;
