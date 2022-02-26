@@ -1,4 +1,5 @@
 
+const { course } = require('../models');
 const db = require('../models')
 const Request = db.request;
 
@@ -77,11 +78,30 @@ const acceptRequest = async (req,res) =>{
 
 }
 
+const getAllRequestWithCourse = async (req,res) =>{
+    try{
+        const id = req.params.idCourse;
+        const reponse = await Request.findAll({
+            where:{
+                course:id,
+                status:"true"
+            }
+        })
+        return res.status(200).send(reponse);
+    }catch(err){
+        return res.status(400).send({success:"false", message})
+    }
+    
+
+    
+}
+
 
 
 module.exports = {
     addRequest,
     getRequrestById,
     cancelRequest,
-    acceptRequest
+    acceptRequest,
+    getAllRequestWithCourse,
 }

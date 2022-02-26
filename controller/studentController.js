@@ -38,6 +38,8 @@ const getStudentProfile = async(req,res) => {
 
 
 
+
+
 module.exports = {
     registerStudent,
     getStudentProfile
