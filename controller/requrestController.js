@@ -38,6 +38,26 @@ const getRequrestById = async (req,res) =>{
 
 }
 
+const getRequestDone = async (req,res) =>{
+    
+    try{
+        const id = req.params.id;
+        const request = await Request.findAll(
+                {
+                    where: {
+                        author:id,
+                        status:"done"
+                    }
+                }
+
+            );
+        return res.status(200).send( request)
+    }catch(err){
+        return res.status(400).send({mesage: err.message});
+    }
+
+}
+
 const cancelRequest = async (req,res) =>{
 
     try{
@@ -77,6 +97,22 @@ const acceptRequest = async (req,res) =>{
     }
 
 }
+const doneRequest = async (req,res) =>{
+
+    try{
+        const id = req.params.id;
+        const request = await Request.findByPk(id);
+        request.update({status:"done"}).then((result) =>{
+            res.status(200).send({success:true,mesage:result})
+        }).catch(err =>{
+            return res.status(400).send({message:err.message});
+        });
+        
+    }catch(err){
+        return res.status(400).send({success:"false", message:err.message});
+    }
+
+}
 
 const getAllRequestWithCourse = async (req,res) =>{
     try{
@@ -104,4 +140,7 @@ module.exports = {
     cancelRequest,
     acceptRequest,
     getAllRequestWithCourse,
+    doneRequest,
+    getRequestDone
+
 }
