@@ -14,7 +14,7 @@ const registerTutors = async (req,res) =>{
         }
         try{
             Tutor.create(tutors);
-            return res.status(200).send("Create tutor success!");
+            return res.status(200).send({success:true});
         }catch(err){
             return res.status(400).send({message: err.message});
         }

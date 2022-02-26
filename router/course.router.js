@@ -11,5 +11,7 @@ router.get('/getAllCourse',courseController.getALlCourse);
 router.get('/getCourse/:id',courseController.getCourseWithId);
 
 
+router.post('/deleteCourse/:id',courseController.deleteCourse);
+
 
 module.exports = router;
