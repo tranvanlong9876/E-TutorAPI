@@ -45,8 +45,14 @@ const loginWithUsername = async (req,res)=>{
                 password: password
             }
         })
+        console.log("resposne"+ reponse)
         if(reponse){
-            return res.status(200).send(true);
+            if(reponse.status == "active"){
+                return res.status(200).send(true);
+            }else{
+                return res.status(401).send(false);
+            }
+            
         }
     }catch(err){
         return res.status(400).send(false);
