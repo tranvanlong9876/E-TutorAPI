@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     course: DataTypes.INTEGER,
     status:{
       type:String,
-      default:"processing"
+      defaultValue:"processing"
     },
   }, {
     sequelize,

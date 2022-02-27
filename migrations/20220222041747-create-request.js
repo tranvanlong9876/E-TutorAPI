@@ -20,7 +20,7 @@ module.exports = {
       status:{
         type:Sequelize.STRING,
         allowNull:false,
-        default:"processing"
+        defaultValue:"processing"
       },
       createdAt: {
         allowNull: false,

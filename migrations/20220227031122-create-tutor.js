@@ -8,26 +8,42 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       name: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
-      },
-      password: {type: Sequelize.STRING},
-      address: {
+      bithDay: {
         type: Sequelize.STRING
       },
       phone: {
         type: Sequelize.STRING
       },
-      status: {
-        type: Sequelize.BOOLEAN
+      avatar: {
+        type: Sequelize.STRING,
+        defaultValue:"https://res.cloudinary.com/phankieuphuicloud/image/upload/v1625397754/imgAvatar/russia2_r0aqlr.jpg"
       },
-      cv: {
+      email: {
+        type: Sequelize.STRING
+      },
+      password: Sequelize.STRING,
+      status:{
+        type:Sequelize.STRING,
+        defaultValue:"pending",
+        allowNull: true,
+      },
+      address: {
+        type: Sequelize.STRING
+      },
+      languae: {
+        type: Sequelize.STRING
+      },
+      skill: {
+        type: Sequelize.STRING,
+        defaultValue:"dev"
+      },
+      education: {
+        type: Sequelize.STRING
+      },
+      gpa: {
         type: Sequelize.STRING
       },
       createdAt: {

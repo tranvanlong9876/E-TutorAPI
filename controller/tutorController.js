@@ -1,40 +1,79 @@
-const db = require('..models');
+const db = require('../models');
+const tutor = require('../models/tutor');
 
-const Tutor = db.tutors;
+
+const Tutor = db.tutor;
 
 const registerTutors = async (req,res) =>{
-    const email = Tutor.findOne(req.body.email);
-    if(email != null) {
-        const {name,passwords,address} = await req.body;
+    const email = req.body.email;
+    const isUser = await Tutor.findOne({
+        where:{
+            email:email,
+        }
+    });
+    if(!isUser) {
+        const {name,bithDay,phone,avatar,email,password,address,skill,education,gpa} = await req.body;
         const tutors = {
-            email: email,
             name:name,
-            password: passwords,
-            address: address
+            bithDay:bithDay,
+            phone:phone,
+            avatar:avatar,
+            email:email,
+            password:password,
+            address:address,
+            skill:skill,
+            education:education,
+            gpa:gpa
         }
         try{
-            Tutor.create(tutors);
-            return res.status(200).send({success:true});
+           const response = await Tutor.create(tutors);
+            return res.status(200).send(response);
         }catch(err){
-            return res.status(400).send({message: err.message});
+            return res.status(400).send(false);
         }
     }else{
-        return res.status(400).send({message:"Email alredy useing"});
+        return res.status(401).send(false);
     }
 }
 
 
+const loginWithUsername = async (req,res)=>{
+    try{
+        const {email,password} = req.body;
+        const reponse = await Tutor.findOne({
+            where: {email: email,
+                password: password
+            }
+        })
+        if(reponse){
+            return res.status(200).send(true);
+        }
+    }catch(err){
+        return res.status(400).send(false);
+    }
+
+
+
+
+}
+
+
 const getTutorProfile = async(req,res) => {
-    const id  = req.params.id;
-    const tutors = await Tutor.findOne(id);
+    const email  = req.params.email;
+    const tutors = await Tutor.findOne({
+        where:{
+            email:email,
+        }
+    });
     if(tutors != null){
-        return res.status(200).send({profile:tutors});
+        return res.status(200).send(tutors);
     }else{
-        return res.status(400).send({message:"No profile with id"+id});
+        return res.status(400).send({message:"No profile with id"+email});
     }
 }
 
 module.exports = {
     registerTutors,
-    getTutorProfile
+    getTutorProfile,
+    loginWithUsername
 }
