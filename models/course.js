@@ -24,7 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     ageLimit: DataTypes.STRING,
     price: DataTypes.STRING,
-    student: DataTypes.INTEGER,
+    student:{
+      type:DataTypes.INTEGER,
+      defaultValue:0
+    },
   }, {
     sequelize,
     modelName: 'Course',

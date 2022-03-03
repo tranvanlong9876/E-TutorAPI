@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Lession.init({
-    id: DataTypes.INTEGER,
+    id: { 
+      type:DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true},
     course: DataTypes.INTEGER,
     student: DataTypes.INTEGER,
     linkMeet: DataTypes.STRING,

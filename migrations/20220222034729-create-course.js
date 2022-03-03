@@ -25,6 +25,7 @@ module.exports = {
       },
       student: {
         type: Sequelize.INTEGER,
+        defaultValue:0,
         allowNull: true,
       
       },
