@@ -1,6 +1,8 @@
 const db = require('../models');
-const tutor = require('../models/tutor');
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
 
+// const resultImg = await cloudinary.uploader.upload(req.file.path);
 
 const Tutor = db.tutor;
 
@@ -11,13 +13,15 @@ const registerTutors = async (req,res) =>{
             email:email,
         }
     });
+
     if(!isUser) {
-        const {name,bithDay,phone,avatar,email,password,address,skill,education,gpa} = await req.body;
+        
+
+        const {name,bithDay,phone,email,password,address,skill,education,gpa} = await req.body;
         const tutors = {
             name:name,
             bithDay:bithDay,
             phone:phone,
-            avatar:avatar,
             email:email,
             password:password,
             address:address,

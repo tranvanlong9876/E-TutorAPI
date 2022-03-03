@@ -18,6 +18,7 @@ const reportRouter = require("./router/report.router.js")
 const requrestRouter = require("./router/request.router.js");
 const courseRouter = require("./router/course.router.js");
 const tutorRouter = require("./router/tutor.router");
+const lessionRouter = require("./router/lession.router");
 
 
 app.use("/admin",adminRouter);
@@ -26,7 +27,7 @@ app.use("/report",reportRouter);
 app.use("/request",requrestRouter);
 app.use("/course",courseRouter);
 app.use("/tutor",tutorRouter);
-
+app.use("lession",lessionRouter);
 
 app.get('/',(req,res)=>{
     res.send("Hello world!");

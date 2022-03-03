@@ -39,6 +39,6 @@ db.news = require("./news")(sequelize, DataTypes)
 db.report = require("./report")(sequelize, DataTypes)
 db.course = require("./course")(sequelize, DataTypes)
 db.request = require("./request")(sequelize, DataTypes)
-
+db.lession = require("./lession")(sequelize, DataTypes)
 
 module.exports = db;
