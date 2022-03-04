@@ -24,8 +24,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       student: {
-        type: Sequelize.INTEGER,
-        defaultValue:0,
+        type: Sequelize.STRING,
+        defaultValue:"",
         allowNull: true,
       
       },

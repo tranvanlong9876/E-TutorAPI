@@ -19,12 +19,17 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true},
     course: DataTypes.INTEGER,
-    student: DataTypes.INTEGER,
+    student: DataTypes.STRING,
     linkMeet: DataTypes.STRING,
     timeStart: DataTypes.STRING,
     timeEnd: DataTypes.STRING,
     date: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+    status:{
+      type:DataTypes.STRING,
+      allowNull: true,
+      defaultValue:"active"
+    }
   }, {
     sequelize,
     modelName: 'Lession',

@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       student: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       linkMeet: {
         type: Sequelize.STRING
@@ -29,6 +29,11 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      status:{
+        type:Sequelize.STRING,
+        allowNull: true,
+        defaultValue:"active"
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -38,7 +43,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-  },
+  },  
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Lessions');
   }
