@@ -35,7 +35,7 @@ const getAllLession = async (req,res) =>{
             }
         
         })
-        return res.status(200).send(response);
+        return res.status(200).send({message:response});
     }catch(err){
         return res.status(400).send({mesage:err.message});
     }
