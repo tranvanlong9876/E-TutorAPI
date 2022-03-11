@@ -57,6 +57,8 @@ const loginWithUsername = async (req,res)=>{
                 return res.status(401).send(false);
             }
             
+        }else{
+            return res.status(400).send(false);
         }
     }catch(err){
         return res.status(400).send(false);
