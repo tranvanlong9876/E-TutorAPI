@@ -27,7 +27,7 @@ app.use("/report",reportRouter);
 app.use("/request",requrestRouter);
 app.use("/course",courseRouter);
 app.use("/tutor",tutorRouter);
-app.use("lession",lessionRouter);
+app.use("/lession",lessionRouter);
 
 app.get('/',(req,res)=>{
     res.send("Hello world!");
