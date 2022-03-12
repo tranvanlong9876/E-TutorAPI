@@ -59,9 +59,28 @@ const deleteCourse = async (req,res) =>{
     }
 }
 
+
+const getCourseWithStudent = async(req,res) =>{
+
+    try{
+        const idStudent = req.params.idStudent;
+        const response = await Course.findAll({
+            where:{
+                student:idStudent
+            }
+        });
+        return res.status(200).send(response)
+    }catch(err){
+        return res.status(400).send({success:false,mesage: err.message})
+    }
+
+
+}
+
 module.exports = {
     addCourse,
     getCourseWithId,
     getALlCourse,
-    deleteCourse
+    deleteCourse,
+    getCourseWithStudent
 } 

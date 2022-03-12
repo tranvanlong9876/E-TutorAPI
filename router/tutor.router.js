@@ -8,4 +8,8 @@ router.post('/login',tutorController.loginWithUsername);
 
 router.get('/getTutorProfile/:email',tutorController.getTutorProfile);
 
+router.post('/acceptTutor/:idTutor',tutorController.acceptTutor)
+
+router.get('/getAllTutor',tutorController.getAllTutor);
+
 module.exports = router;

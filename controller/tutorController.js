@@ -70,6 +70,19 @@ const loginWithUsername = async (req,res)=>{
 }
 
 
+const getAllTutor = async (req,res) =>{
+
+    try{
+        const tutor  = await Tutor.findAll({where:{
+            status:"pending"
+        }});
+        return res.status(200).send(tutor);
+    }catch(err){
+        return res.status(400).send({mesage: err.message});
+    }
+
+}
+
 const getTutorProfile = async(req,res) => {
     const email  = req.params.email;
     const tutors = await Tutor.findOne({
@@ -84,8 +97,23 @@ const getTutorProfile = async(req,res) => {
     }
 }
 
+
+const acceptTutor = async (req,res) =>{
+
+        const idTutor = req.params.idTutor;
+        const tutor = await tutors.findByPk(idTutor);
+        tutor.update({status:"active"}).then((result) =>{
+            return res.status(200).send({message:result})
+        }).catch((err) =>{
+            return res.status(400).send({message:err.message})
+        })
+   
+}
+
 module.exports = {
     registerTutors,
     getTutorProfile,
-    loginWithUsername
+    loginWithUsername,
+    acceptTutor,
+    getAllTutor
 }

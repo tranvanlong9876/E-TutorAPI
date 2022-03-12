@@ -6,4 +6,5 @@ router.post('/createAdmin', adminController.createAdmin);
 router.get("/",(req,res)=>{
     res.send("Admin router!")
 })
+router.post('/login',adminController.LoginAdminWithUsername);
 module.exports = router;

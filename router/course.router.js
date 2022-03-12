@@ -13,5 +13,6 @@ router.get('/getCourse/:id',courseController.getCourseWithId);
 
 router.post('/deleteCourse/:id',courseController.deleteCourse);
 
+router.get('/getCourseWithStudent/:idStudent',courseController.getCourseWithStudent)
 
 module.exports = router;
