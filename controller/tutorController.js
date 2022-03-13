@@ -110,10 +110,34 @@ const acceptTutor = async (req,res) =>{
    
 }
 
+const updateProfile = async(req,res) =>{
+
+    const id = req.params.id;
+    const body = await req.body;
+    const item = await Tutor.findByPk(id);
+    item.update({
+        name:body.name,
+        email:body.email,
+        education:body.education,
+        skill:body.skill,
+        avatar:body.avatar,
+        phone:body.phone,
+
+    }).then(()=>{
+
+        return res.status(200).send(true);
+    }).catch(()=>{
+        return res.status(400).send(false)
+    })
+
+}
+
+
 module.exports = {
     registerTutors,
     getTutorProfile,
     loginWithUsername,
     acceptTutor,
-    getAllTutor
+    getAllTutor,
+    updateProfile
 }

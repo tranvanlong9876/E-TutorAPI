@@ -8,7 +8,9 @@ router.post('/login',tutorController.loginWithUsername);
 
 router.get('/getTutorProfile/:email',tutorController.getTutorProfile);
 
-router.post('/acceptTutor/:idTutor',tutorController.acceptTutor)
+router.post('/acceptTutor/:idTutor',tutorController.acceptTutor);
+
+router.post('/updateTutor/:id',tutorController.updateProfile)
 
 router.get('/getAllTutor',tutorController.getAllTutor);
 
