@@ -100,13 +100,25 @@ const acceptRequest = async (req,res) =>{
 const doneRequest = async (req,res) =>{
 
     try{
-        const id = req.params.id;
-        const request = await Request.findByPk(id);
-        request.update({status:"done"}).then((result) =>{
-            res.status(200).send({success:true,mesage:result})
-        }).catch(err =>{
-            return res.status(400).send({message:err.message});
-        });
+        const body = req.body;
+        const request = await Request.findOne({
+            where:{
+               
+                course:body.course,
+                status:"true"
+            }
+        })
+        console.log(request);
+        if(request != null){
+            request.update({status:"done"}).then((result) =>{
+                res.status(200).send(true)
+            }).catch(err =>{
+                return res.status(400).send(true);
+            });
+        }else{
+            return res.status(400).send(false);
+        }
+
         
     }catch(err){
         return res.status(400).send({success:"false", message:err.message});
