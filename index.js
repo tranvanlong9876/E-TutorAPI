@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 // setup router
 const adminRouter = require("./router/admin.router.js")
-const adminRouter = require("./router/student.router.js")
+const studentRouter = require("./router/student.router.js")
 const newsRouter = require("./router/news.router.js")
 const reportRouter = require("./router/report.router.js")
 const requrestRouter = require("./router/request.router.js");
@@ -23,7 +23,7 @@ const lessionRouter = require("./router/lession.router");
 
 
 app.use("/admin",adminRouter);
-app.use("/student",adminRouter);
+app.use("/student",studentRouter);
 app.use("/news",newsRouter);
 app.use("/report",reportRouter);
 app.use("/request",requrestRouter);
