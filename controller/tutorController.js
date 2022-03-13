@@ -101,7 +101,7 @@ const getTutorProfile = async(req,res) => {
 const acceptTutor = async (req,res) =>{
 
         const idTutor = req.params.idTutor;
-        const tutor = await tutors.findByPk(idTutor);
+        const tutor = await Tutor.findByPk(idTutor);
         tutor.update({status:"active"}).then((result) =>{
             return res.status(200).send({message:result})
         }).catch((err) =>{
