@@ -14,7 +14,7 @@ router.post('/acceptRequest/:id',requrestController.acceptRequest);
 
 router.post('/cancelRequest/:id',requrestController.cancelRequest);
 
-router.post("/doneRequest/:id",requrestController.doneRequest);
+router.post("/doneRequest",requrestController.doneRequest);
 
 router.get("/getAllRequestWithCourse/:idCourse",requrestController.getAllRequestWithCourse);
 module.exports = router;
