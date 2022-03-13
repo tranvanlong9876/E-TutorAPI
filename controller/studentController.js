@@ -1,12 +1,14 @@
 const db = require('../models');
 
-const Student = db.student;
+const Student = db.students;
 
 
 const registerStudent = async (req,res)=>{
 
-    const email = Student.findOne(req.body.email);
-    if(email != null) {
+
+    
+    const email = await Student.findOne({where: {email: req.body.email}});
+    if(!email) {
         const {name,passwords,address} = await req.body;
         const items = {
             email: email,

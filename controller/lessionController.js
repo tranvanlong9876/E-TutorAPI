@@ -7,7 +7,7 @@ const addLession = async (req,res) =>{
     const course = req.params.course;
     const {students,linkMeet,timeStart,timeEnd,date,description}  = req.body;
     const lession =  {
-        students:students,
+        student:students,
         linkMeet:linkMeet,
         timeStart:timeStart,
         timeEnd:timeEnd,
