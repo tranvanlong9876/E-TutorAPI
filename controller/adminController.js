@@ -3,6 +3,7 @@
 const db = require("../models")
 
 const Admin = db.admin;
+const Tutor = db.tutor;
 
 
 const createAdmin = async (req,res) =>{   
@@ -16,7 +17,7 @@ const createAdmin = async (req,res) =>{
             status: req.body.status,
         }
        await Admin.create(admin);
-        return res.status(200).send("Create addmin success");
+        return res.status(200).send("Create admin success");
     }catch(e){
         return res.status(e.status || 400).send("Message"+e.message);
     }
@@ -45,9 +46,24 @@ const LoginAdminWithUsername = async (req,res)=>{
     }
 }
 
+const acceptTutor = async (req,res) =>{
+
+    const idTutor = req.params.idTutor;
+    const tutor = await Tutor.findByPk(idTutor);
+    if(tutor == null) {
+        return res.status(400).send({message:result});
+    }
+    tutor.update({status:"active"}).then((result) =>{
+        return res.status(200).send({message:result})
+    }).catch((err) =>{
+        return res.status(400).send({message:err.message})
+    })
+
+}
+
 
 module.exports = {
-
+    acceptTutor,
     createAdmin,
     LoginAdminWithUsername
 }

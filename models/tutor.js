@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     avatar: {
       type: DataTypes.STRING,
-      defaultValue:"https://res.cloudinary.com/phankieuphuicloud/image/upload/v1625397754/imgAvatar/russia2_r0aqlr.jpg"
+      defaultValue:"https://ibb.co/KrKTztD"
     },
 
     email: DataTypes.STRING,

@@ -22,11 +22,12 @@ const getRequrestById = async (req,res) =>{
     
     try{
         const id = req.params.id;
+        const status = req.body.status;
         const request = await Request.findAll(
                 {
                     where: {
                         author:id,
-                        status:"processing"
+                        status: status
                     }
                 }
 
@@ -104,7 +105,7 @@ const doneRequest = async (req,res) =>{
         const request = await Request.findOne({
             where:{
                
-                course:body.course,
+                course: body.course,
                 status:"true"
             }
         })

@@ -117,12 +117,9 @@ const updateProfile = async(req,res) =>{
     const item = await Tutor.findByPk(id);
     item.update({
         name:body.name,
-        email:body.email,
         education:body.education,
         skill:body.skill,
-        avatar:body.avatar,
-        phone:body.phone,
-
+        avatar:body.avatar
     }).then(()=>{
 
         return res.status(200).send(true);
